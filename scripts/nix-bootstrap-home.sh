@@ -6,8 +6,8 @@
 mkdir -p ~/nix-boot
 cd ~/nix-boot
 
-if [ ! -e nix-1.6.1.tar.xz ] ; then
-wget http://nixos.org/releases/nix/nix-1.6.1/nix-1.6.1.tar.xz
+if [ ! -e nix-1.11.1.tar.xz ] ; then
+wget http://nixos.org/releases/nix/nix-1.11.1/nix-1.11.1.tar.xz
 fi
 if [ ! -e bzip2-1.0.6.tar.gz ] ; then
 wget http://bzip.org/1.0.6/bzip2-1.0.6.tar.gz
@@ -46,15 +46,15 @@ if [ ! -e $nix/lib/libbz2.so.1.0.6 ]; then
 fi
 
 
-if [ ! -e $nix/bin/curl ]; then
-   cd $nix
-   lzma -d curl*.lzma
-   tar xvf curl*tar
-   cd curl-*
-   ./configure --prefix=$nix
-   make
-   make install
-fi
+#if [ ! -e $nix/bin/curl ]; then
+#   cd $nix
+#   lzma -d curl*.lzma
+#   tar xvf curl*tar
+#   cd curl-*
+#   ./configure --prefix=$nix
+#   make
+#   make install
+#fi
 
 if [ ! -e $nix/bin/sqlite3 ]; then
    cd $nix
